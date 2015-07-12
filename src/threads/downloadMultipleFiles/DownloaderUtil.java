@@ -10,6 +10,10 @@ import java.net.URL;
 public class DownloaderUtil {
 	private static final int BUFFER_SIZE = 4096;
 	public static void downloadFile(String sourceUrl, String destUrl) throws IOException{
+		File file = new File(destUrl);
+		if(!file.exists()){
+			file.mkdir();
+		}
 		System.out.println("Running Thread : "+Thread.currentThread().getName());
 		URL url = new URL(sourceUrl);
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
