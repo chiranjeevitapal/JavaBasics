@@ -8,5 +8,15 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="WebContent/lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="WebContent/lib/slf4j-api-1.7.12.jar"/>
+	<classpathentry kind="lib" path="WebContent/lib/log4j-over-slf4j-1.7.12.jar"/>
+	<classpathentry kind="lib" path="WebContent/lib/slf4j-simple-1.7.12.jar"/>
+	<classpathentry kind="lib" path="WebContent/lib/jcl-over-slf4j-1.7.12.jar"/>
+	<classpathentry kind="lib" path="WebContent/lib/jul-to-slf4j-1.7.12.jar"/>
+	<classpathentry kind="lib" path="WebContent/lib/osgi-over-slf4j-1.7.12.jar"/>
+	<classpathentry kind="lib" path="WebContent/lib/slf4j-ext-1.7.12.jar"/>
+	<classpathentry kind="lib" path="WebContent/lib/commons-codec-1.7.jar"/>
+	<classpathentry kind="lib" path="WebContent/lib/ttorrent-core-1.5-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
