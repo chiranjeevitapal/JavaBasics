@@ -10,7 +10,7 @@ import com.turn.ttorrent.client.SharedTorrent;
 
 public class TorrentDownloader{
 	public static void main(String args[]) throws UnknownHostException, IOException{
-		File srcTorrentFile = new File("C://Users/Chiranjeevi/Desktop/[kat.cr]fast.and.furious.7.official.trailer.1080p.hd.headbangersfc.torrent");
+		File srcTorrentFile = new File("C://Users/Chiranjeevi/Desktop/[kat.cr]war.pigs.2015.hdrip.xvid.etrg.torrent");
 		File destinationFile = new File("C://Users/Chiranjeevi/Desktop");
 		System.out.println("srcTorrentFile "+srcTorrentFile.exists()+" dest "+destinationFile.exists());
 		InetAddress inetAddress = InetAddress.getLocalHost();

@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class CharCountInstring {
 	public static void main(String args[]){
-		String anyString = "chiranjeevi parthasarathi tapal ? > ))) ";
+		String anyString = "chiranjeevi parthasarathi tapal";
 		Map<String,Integer> countMap = new HashMap<String,Integer>();
 		String currentElem = "";
 		String tempString = anyString;//Take a temp string that will be diminishing in each loop
