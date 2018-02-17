@@ -26,5 +26,5 @@ public class CloneableMain {
 		System.out.println(modal.getCompany().getName());
 		
 	}
-
+	
 }
