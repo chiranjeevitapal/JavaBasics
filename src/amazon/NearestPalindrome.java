@@ -15,7 +15,10 @@ public class NearestPalindrome {
 		System.out.println(inputList);
 		scan.close();
 		inputList.forEach(number -> {
-			if (number < 10) {
+			if(number == 0 ) {
+				System.out.println(++number);
+			}
+			if (number>0 &&number < 10) {
 				System.out.println(number - 1);
 			} else {
 				determinePalindrome(number);
