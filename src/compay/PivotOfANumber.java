@@ -1,4 +1,4 @@
-package amazon;
+package compay;
 
 import java.util.ArrayList;
 import java.util.List;
