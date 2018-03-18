@@ -63,7 +63,7 @@ public class PivotOfANumber {
 		System.out.println(rightPart);
 		System.out.println(palindrome);
 	}
-
+	//
 	public static boolean checkIfPalindrome(String num) {
 		StringBuffer reverse = new StringBuffer(num).reverse();
 		if (num.equals(reverse.toString())) {
