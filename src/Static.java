@@ -1,32 +1,20 @@
+import java.util.Scanner;
 
 public class Static {
 
-	public static int count;
-
-	public final int mycount;
-	
-	Static(){
-		mycount = 20;
-	}
-	static {
-		count = 10;
-	}
-
-	void increment() {
-		count++;
-	}
-
-	public static final void main(String args[]) {
-		Static count1 = new Static();
-		Static count2 = new Static();
-		Static count3 = new Static();
-
-		count1.increment();
-		System.out.println(count);
-		count2.increment();
-		System.out.println(count);
-		count3.increment();
-		System.out.println(count);
-		count ++;
+	public static void main(String[] args) {
+		/*
+		 * Enter your code here. Read input from STDIN. Print output to STDOUT. Your
+		 * class should be named Solution.
+		 */
+		Scanner scanner = new Scanner(System.in);
+		String scannedLine = scanner.nextLine();
+		int lineNumber = 0;
+		while(!scannedLine.equals("EOF")) {
+			
+			System.out.println(++lineNumber +" "+scannedLine);
+			scannedLine = scanner.nextLine();
+		}
+		scanner.close();
 	}
 }
