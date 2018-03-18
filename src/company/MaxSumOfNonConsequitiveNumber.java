@@ -1,4 +1,4 @@
-package amazon;
+package company;
 
 public class MaxSumOfNonConsequitiveNumber {
 	public static void main(String args[]) {
