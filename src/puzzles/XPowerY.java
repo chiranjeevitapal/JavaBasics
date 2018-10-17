@@ -5,7 +5,7 @@ public class XPowerY {
 	MultiplyOldSchool multiply = new MultiplyOldSchool();
 	public static void main(String[] args) {
 		XPowerY xpy = new XPowerY();
-		xpy.power("2", 1000);
+		xpy.power("2", 50);
 		System.out.println(xpy.result);
 	}
 
