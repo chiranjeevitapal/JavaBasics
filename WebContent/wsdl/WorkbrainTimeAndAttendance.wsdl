@@ -1,0 +1,1411 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ta.webservices.workbrain.com" xmlns:intf="http://ta.webservices.workbrain.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="http://exception.webservices.workbrain.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ta.webservices.workbrain.com">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ta.webservices.workbrain.com">
+   <import namespace="http://exception.webservices.workbrain.com"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="ArrayOf_xsd_string">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:string[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSQueryCriteria">
+    <sequence>
+     <element name="authorizationType" nillable="true" type="xsd:string"/>
+     <element name="calcGroupIds" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="calcGroupNames" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="empFirstName" nillable="true" type="xsd:string"/>
+     <element name="empIds" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="empLastName" nillable="true" type="xsd:string"/>
+     <element name="empName" nillable="true" type="xsd:string"/>
+     <element name="empNames" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="endDate" nillable="true" type="xsd:dateTime"/>
+     <element name="highEmpId" nillable="true" type="xsd:string"/>
+     <element name="includeSubTeams" nillable="true" type="xsd:string"/>
+     <element name="lowEmpId" nillable="true" type="xsd:string"/>
+     <element name="overrideStatus" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="overrideTypeIds" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="pageNo" type="xsd:int"/>
+     <element name="pageSize" type="xsd:int"/>
+     <element name="payGroupIds" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="payGroupNames" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="queryPeriod" nillable="true" type="xsd:string"/>
+     <element name="retrieveCalcGroupFlag" nillable="true" type="xsd:string"/>
+     <element name="retrieveDepartmentFlag" nillable="true" type="xsd:string"/>
+     <element name="retrieveDocketFlag" nillable="true" type="xsd:string"/>
+     <element name="retrieveEmployeeScheduleFlag" nillable="true" type="xsd:string"/>
+     <element name="retrieveEmployeesFlag" nillable="true" type="xsd:string"/>
+     <element name="retrieveHourTypeFlag" nillable="true" type="xsd:string"/>
+     <element name="retrieveJobFlag" nillable="true" type="xsd:string"/>
+     <element name="retrieveOverrideTypeFlag" nillable="true" type="xsd:string"/>
+     <element name="retrieveOverridesFlag" nillable="true" type="xsd:string"/>
+     <element name="retrievePayGroupFlag" nillable="true" type="xsd:string"/>
+     <element name="retrieveProjectFlag" nillable="true" type="xsd:string"/>
+     <element name="retrieveShiftFlag" nillable="true" type="xsd:string"/>
+     <element name="retrieveShiftPatternFlag" nillable="true" type="xsd:string"/>
+     <element name="retrieveTimeCodeFlag" nillable="true" type="xsd:string"/>
+     <element name="retrieveWorkDetailsFlag" nillable="true" type="xsd:string"/>
+     <element name="retrieveWorkSummaryFlag" nillable="true" type="xsd:string"/>
+     <element name="startDate" nillable="true" type="xsd:dateTime"/>
+     <element name="teamIds" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="teamNames" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="unProcessedClkInWrkSumary" type="xsd:boolean"/>
+     <element name="useCurrentUserInRetrieval" type="xsd:boolean"/>
+     <element name="viewDate" nillable="true" type="xsd:dateTime"/>
+     <element name="applyOverride" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+   <complexType name="WSHoliday">
+    <sequence>
+     <element name="holDate" nillable="true" type="xsd:dateTime"/>
+     <element name="holDesc" nillable="true" type="xsd:string"/>
+     <element name="holFlag1" nillable="true" type="xsd:string"/>
+     <element name="holFlag2" nillable="true" type="xsd:string"/>
+     <element name="holFlag3" nillable="true" type="xsd:string"/>
+     <element name="holFlag4" nillable="true" type="xsd:string"/>
+     <element name="holFlag5" nillable="true" type="xsd:string"/>
+     <element name="holId" nillable="true" type="xsd:string"/>
+     <element name="holName" nillable="true" type="xsd:string"/>
+     <element name="holUdf1" nillable="true" type="xsd:string"/>
+     <element name="holUdf2" nillable="true" type="xsd:string"/>
+     <element name="holUdf3" nillable="true" type="xsd:string"/>
+     <element name="holUdf4" nillable="true" type="xsd:string"/>
+     <element name="holUdf5" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="WSOverride">
+    <sequence>
+     <element name="cancelledDate" nillable="true" type="xsd:dateTime"/>
+     <element name="comment" nillable="true" type="xsd:string"/>
+     <element name="createDate" nillable="true" type="xsd:dateTime"/>
+     <element name="empId" nillable="true" type="xsd:string"/>
+     <element name="endDate" nillable="true" type="xsd:dateTime"/>
+     <element name="endTime" nillable="true" type="xsd:dateTime"/>
+     <element name="flag1" nillable="true" type="xsd:string"/>
+     <element name="flag10" nillable="true" type="xsd:string"/>
+     <element name="flag2" nillable="true" type="xsd:string"/>
+     <element name="flag3" nillable="true" type="xsd:string"/>
+     <element name="flag4" nillable="true" type="xsd:string"/>
+     <element name="flag5" nillable="true" type="xsd:string"/>
+     <element name="flag6" nillable="true" type="xsd:string"/>
+     <element name="flag7" nillable="true" type="xsd:string"/>
+     <element name="flag8" nillable="true" type="xsd:string"/>
+     <element name="flag9" nillable="true" type="xsd:string"/>
+     <element name="id" nillable="true" type="xsd:string"/>
+     <element name="message" nillable="true" type="xsd:string"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="newValue" nillable="true" type="xsd:string"/>
+     <element name="oldValue" nillable="true" type="xsd:string"/>
+     <element name="order" nillable="true" type="xsd:string"/>
+     <element name="startDate" nillable="true" type="xsd:dateTime"/>
+     <element name="startTime" nillable="true" type="xsd:dateTime"/>
+     <element name="status" nillable="true" type="xsd:string"/>
+     <element name="typId" nillable="true" type="xsd:string"/>
+     <element name="udf1" nillable="true" type="xsd:string"/>
+     <element name="udf10" nillable="true" type="xsd:string"/>
+     <element name="udf2" nillable="true" type="xsd:string"/>
+     <element name="udf3" nillable="true" type="xsd:string"/>
+     <element name="udf4" nillable="true" type="xsd:string"/>
+     <element name="udf5" nillable="true" type="xsd:string"/>
+     <element name="udf6" nillable="true" type="xsd:string"/>
+     <element name="udf7" nillable="true" type="xsd:string"/>
+     <element name="udf8" nillable="true" type="xsd:string"/>
+     <element name="udf9" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="WSAlternateHolidayOverride">
+    <sequence>
+     <element name="action" nillable="true" type="xsd:string"/>
+     <element name="holiday" nillable="true" type="impl:WSHoliday"/>
+     <element name="override" nillable="true" type="impl:WSOverride"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSAlternateHolidayOverride">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSAlternateHolidayOverride[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSCalcGroup">
+    <sequence>
+     <element name="calcgrpDesc" nillable="true" type="xsd:string"/>
+     <element name="calcgrpFlag1" nillable="true" type="xsd:string"/>
+     <element name="calcgrpFlag10" nillable="true" type="xsd:string"/>
+     <element name="calcgrpFlag2" nillable="true" type="xsd:string"/>
+     <element name="calcgrpFlag3" nillable="true" type="xsd:string"/>
+     <element name="calcgrpFlag4" nillable="true" type="xsd:string"/>
+     <element name="calcgrpFlag5" nillable="true" type="xsd:string"/>
+     <element name="calcgrpFlag6" nillable="true" type="xsd:string"/>
+     <element name="calcgrpFlag7" nillable="true" type="xsd:string"/>
+     <element name="calcgrpFlag8" nillable="true" type="xsd:string"/>
+     <element name="calcgrpFlag9" nillable="true" type="xsd:string"/>
+     <element name="calcgrpId" nillable="true" type="xsd:string"/>
+     <element name="calcgrpName" nillable="true" type="xsd:string"/>
+     <element name="calcgrpUdf1" nillable="true" type="xsd:string"/>
+     <element name="calcgrpUdf10" nillable="true" type="xsd:string"/>
+     <element name="calcgrpUdf2" nillable="true" type="xsd:string"/>
+     <element name="calcgrpUdf3" nillable="true" type="xsd:string"/>
+     <element name="calcgrpUdf4" nillable="true" type="xsd:string"/>
+     <element name="calcgrpUdf5" nillable="true" type="xsd:string"/>
+     <element name="calcgrpUdf6" nillable="true" type="xsd:string"/>
+     <element name="calcgrpUdf7" nillable="true" type="xsd:string"/>
+     <element name="calcgrpUdf8" nillable="true" type="xsd:string"/>
+     <element name="calcgrpUdf9" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSCalcGroup">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSCalcGroup[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSDepartment">
+    <sequence>
+     <element name="deptDesc" nillable="true" type="xsd:string"/>
+     <element name="deptEndDate" nillable="true" type="xsd:dateTime"/>
+     <element name="deptFlag1" nillable="true" type="xsd:string"/>
+     <element name="deptFlag2" nillable="true" type="xsd:string"/>
+     <element name="deptFlag3" nillable="true" type="xsd:string"/>
+     <element name="deptFlag4" nillable="true" type="xsd:string"/>
+     <element name="deptFlag5" nillable="true" type="xsd:string"/>
+     <element name="deptId" nillable="true" type="xsd:string"/>
+     <element name="deptName" nillable="true" type="xsd:string"/>
+     <element name="deptRefkey1" nillable="true" type="xsd:string"/>
+     <element name="deptRefkey2" nillable="true" type="xsd:string"/>
+     <element name="deptRefkey3" nillable="true" type="xsd:string"/>
+     <element name="deptRefkey4" nillable="true" type="xsd:string"/>
+     <element name="deptRefkey5" nillable="true" type="xsd:string"/>
+     <element name="deptStartDate" nillable="true" type="xsd:dateTime"/>
+     <element name="deptVal1" nillable="true" type="xsd:string"/>
+     <element name="deptVal2" nillable="true" type="xsd:string"/>
+     <element name="deptVal3" nillable="true" type="xsd:string"/>
+     <element name="deptVal4" nillable="true" type="xsd:string"/>
+     <element name="deptVal5" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSDepartment">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSDepartment[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSDocket">
+    <sequence>
+     <element name="actvsetId" nillable="true" type="xsd:string"/>
+     <element name="dockDesc" nillable="true" type="xsd:string"/>
+     <element name="dockEndDate" nillable="true" type="xsd:dateTime"/>
+     <element name="dockFlag1" nillable="true" type="xsd:string"/>
+     <element name="dockFlag2" nillable="true" type="xsd:string"/>
+     <element name="dockFlag3" nillable="true" type="xsd:string"/>
+     <element name="dockFlag4" nillable="true" type="xsd:string"/>
+     <element name="dockFlag5" nillable="true" type="xsd:string"/>
+     <element name="dockId" nillable="true" type="xsd:string"/>
+     <element name="dockName" nillable="true" type="xsd:string"/>
+     <element name="dockPieceRate" nillable="true" type="xsd:string"/>
+     <element name="dockQty" nillable="true" type="xsd:string"/>
+     <element name="dockRefkey1" nillable="true" type="xsd:string"/>
+     <element name="dockRefkey2" nillable="true" type="xsd:string"/>
+     <element name="dockRefkey3" nillable="true" type="xsd:string"/>
+     <element name="dockRefkey4" nillable="true" type="xsd:string"/>
+     <element name="dockRefkey5" nillable="true" type="xsd:string"/>
+     <element name="dockStandardDur" nillable="true" type="xsd:string"/>
+     <element name="dockStandardQty" nillable="true" type="xsd:string"/>
+     <element name="dockStartDate" nillable="true" type="xsd:dateTime"/>
+     <element name="dockUdf1" nillable="true" type="xsd:string"/>
+     <element name="dockUdf2" nillable="true" type="xsd:string"/>
+     <element name="dockUdf3" nillable="true" type="xsd:string"/>
+     <element name="dockUdf4" nillable="true" type="xsd:string"/>
+     <element name="dockUdf5" nillable="true" type="xsd:string"/>
+     <element name="machId" nillable="true" type="xsd:string"/>
+     <element name="partId" nillable="true" type="xsd:string"/>
+     <element name="projId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSDocket">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSDocket[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSWorkDetail">
+    <sequence>
+     <element name="auth" nillable="true" type="xsd:string"/>
+     <element name="comments" nillable="true" type="xsd:string"/>
+     <element name="deptId" nillable="true" type="xsd:string"/>
+     <element name="deptName" nillable="true" type="xsd:string"/>
+     <element name="dockId" nillable="true" type="xsd:string"/>
+     <element name="dockName" nillable="true" type="xsd:string"/>
+     <element name="empId" nillable="true" type="xsd:string"/>
+     <element name="endTime" nillable="true" type="xsd:dateTime"/>
+     <element name="flag1" nillable="true" type="xsd:string"/>
+     <element name="flag10" nillable="true" type="xsd:string"/>
+     <element name="flag2" nillable="true" type="xsd:string"/>
+     <element name="flag3" nillable="true" type="xsd:string"/>
+     <element name="flag4" nillable="true" type="xsd:string"/>
+     <element name="flag5" nillable="true" type="xsd:string"/>
+     <element name="flag6" nillable="true" type="xsd:string"/>
+     <element name="flag7" nillable="true" type="xsd:string"/>
+     <element name="flag8" nillable="true" type="xsd:string"/>
+     <element name="flag9" nillable="true" type="xsd:string"/>
+     <element name="htypeId" nillable="true" type="xsd:string"/>
+     <element name="htypeName" nillable="true" type="xsd:string"/>
+     <element name="id" nillable="true" type="xsd:string"/>
+     <element name="jobId" nillable="true" type="xsd:string"/>
+     <element name="jobName" nillable="true" type="xsd:string"/>
+     <element name="messages" nillable="true" type="xsd:string"/>
+     <element name="minutes" nillable="true" type="xsd:string"/>
+     <element name="overridden" nillable="true" type="xsd:string"/>
+     <element name="projId" nillable="true" type="xsd:string"/>
+     <element name="projName" nillable="true" type="xsd:string"/>
+     <element name="quantity" nillable="true" type="xsd:string"/>
+     <element name="rate" nillable="true" type="xsd:string"/>
+     <element name="startTime" nillable="true" type="xsd:dateTime"/>
+     <element name="tcodeId" nillable="true" type="xsd:string"/>
+     <element name="tcodeName" nillable="true" type="xsd:string"/>
+     <element name="type" nillable="true" type="xsd:string"/>
+     <element name="udf1" nillable="true" type="xsd:string"/>
+     <element name="udf10" nillable="true" type="xsd:string"/>
+     <element name="udf2" nillable="true" type="xsd:string"/>
+     <element name="udf3" nillable="true" type="xsd:string"/>
+     <element name="udf4" nillable="true" type="xsd:string"/>
+     <element name="udf5" nillable="true" type="xsd:string"/>
+     <element name="udf6" nillable="true" type="xsd:string"/>
+     <element name="udf7" nillable="true" type="xsd:string"/>
+     <element name="udf8" nillable="true" type="xsd:string"/>
+     <element name="udf9" nillable="true" type="xsd:string"/>
+     <element name="workDate" nillable="true" type="xsd:dateTime"/>
+     <element name="wrksId" nillable="true" type="xsd:string"/>
+     <element name="wrksWorkDate" nillable="true" type="xsd:dateTime"/>
+    </sequence>
+   </complexType>
+   <complexType name="WSWorkDetailOverride">
+    <sequence>
+     <element name="action" nillable="true" type="xsd:string"/>
+     <element name="override" nillable="true" type="impl:WSOverride"/>
+     <element name="workDetail" nillable="true" type="impl:WSWorkDetail"/>
+    </sequence>
+   </complexType>
+   <complexType name="WSElapsedTimeOverride">
+    <complexContent>
+     <extension base="impl:WSWorkDetailOverride">
+      <sequence>
+       <element name="respectBreaks" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOfWSElapsedTimeOverride">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSElapsedTimeOverride[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSEmployeeBalance">
+    <sequence>
+     <element name="balId" nillable="true" type="xsd:string"/>
+     <element name="empId" nillable="true" type="xsd:string"/>
+     <element name="empbalId" nillable="true" type="xsd:string"/>
+     <element name="empbalName" nillable="true" type="xsd:string"/>
+     <element name="empbalValue" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="WSEmployeeBalanceOverride">
+    <sequence>
+     <element name="action" nillable="true" type="xsd:string"/>
+     <element name="balanceAction" nillable="true" type="xsd:string"/>
+     <element name="employeeBalance" nillable="true" type="impl:WSEmployeeBalance"/>
+     <element name="override" nillable="true" type="impl:WSOverride"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSEmployeeBalanceOverride">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSEmployeeBalanceOverride[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSEmployeeDefaultLabor">
+    <sequence>
+     <element name="deptId" nillable="true" type="xsd:string"/>
+     <element name="dockId" nillable="true" type="xsd:string"/>
+     <element name="empId" nillable="true" type="xsd:string"/>
+     <element name="flag1" nillable="true" type="xsd:string"/>
+     <element name="flag10" nillable="true" type="xsd:string"/>
+     <element name="flag2" nillable="true" type="xsd:string"/>
+     <element name="flag3" nillable="true" type="xsd:string"/>
+     <element name="flag4" nillable="true" type="xsd:string"/>
+     <element name="flag5" nillable="true" type="xsd:string"/>
+     <element name="flag6" nillable="true" type="xsd:string"/>
+     <element name="flag7" nillable="true" type="xsd:string"/>
+     <element name="flag8" nillable="true" type="xsd:string"/>
+     <element name="flag9" nillable="true" type="xsd:string"/>
+     <element name="htypeId" nillable="true" type="xsd:string"/>
+     <element name="id" nillable="true" type="xsd:string"/>
+     <element name="jobId" nillable="true" type="xsd:string"/>
+     <element name="percentage" nillable="true" type="xsd:string"/>
+     <element name="projId" nillable="true" type="xsd:string"/>
+     <element name="tcodeId" nillable="true" type="xsd:string"/>
+     <element name="udf1" nillable="true" type="xsd:string"/>
+     <element name="udf10" nillable="true" type="xsd:string"/>
+     <element name="udf2" nillable="true" type="xsd:string"/>
+     <element name="udf3" nillable="true" type="xsd:string"/>
+     <element name="udf4" nillable="true" type="xsd:string"/>
+     <element name="udf5" nillable="true" type="xsd:string"/>
+     <element name="udf6" nillable="true" type="xsd:string"/>
+     <element name="udf7" nillable="true" type="xsd:string"/>
+     <element name="udf8" nillable="true" type="xsd:string"/>
+     <element name="udf9" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="WSEmployeeDefaultLaborOverride">
+    <sequence>
+     <element name="action" nillable="true" type="xsd:string"/>
+     <element name="employeedefaultLabor" nillable="true" type="impl:WSEmployeeDefaultLabor"/>
+     <element name="override" nillable="true" type="impl:WSOverride"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSEmployeeDefaultLaborOverride">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSEmployeeDefaultLaborOverride[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSEmployee">
+    <sequence>
+     <element name="calcgrpId" nillable="true" type="xsd:string"/>
+     <element name="empBaseRate" nillable="true" type="xsd:string"/>
+     <element name="empBirthDate" nillable="true" type="xsd:dateTime"/>
+     <element name="empDayStartTime" nillable="true" type="xsd:dateTime"/>
+     <element name="empDefMinutes" nillable="true" type="xsd:string"/>
+     <element name="empEffectiveDate" nillable="true" type="xsd:dateTime"/>
+     <element name="empFirstname" nillable="true" type="xsd:string"/>
+     <element name="empFlag1" nillable="true" type="xsd:string"/>
+     <element name="empFlag10" nillable="true" type="xsd:string"/>
+     <element name="empFlag11" nillable="true" type="xsd:string"/>
+     <element name="empFlag12" nillable="true" type="xsd:string"/>
+     <element name="empFlag13" nillable="true" type="xsd:string"/>
+     <element name="empFlag14" nillable="true" type="xsd:string"/>
+     <element name="empFlag15" nillable="true" type="xsd:string"/>
+     <element name="empFlag16" nillable="true" type="xsd:string"/>
+     <element name="empFlag17" nillable="true" type="xsd:string"/>
+     <element name="empFlag18" nillable="true" type="xsd:string"/>
+     <element name="empFlag19" nillable="true" type="xsd:string"/>
+     <element name="empFlag2" nillable="true" type="xsd:string"/>
+     <element name="empFlag20" nillable="true" type="xsd:string"/>
+     <element name="empFlag3" nillable="true" type="xsd:string"/>
+     <element name="empFlag4" nillable="true" type="xsd:string"/>
+     <element name="empFlag5" nillable="true" type="xsd:string"/>
+     <element name="empFlag6" nillable="true" type="xsd:string"/>
+     <element name="empFlag7" nillable="true" type="xsd:string"/>
+     <element name="empFlag8" nillable="true" type="xsd:string"/>
+     <element name="empFlag9" nillable="true" type="xsd:string"/>
+     <element name="empFulltime" nillable="true" type="xsd:string"/>
+     <element name="empHireDate" nillable="true" type="xsd:dateTime"/>
+     <element name="empId" nillable="true" type="xsd:string"/>
+     <element name="empLastname" nillable="true" type="xsd:string"/>
+     <element name="empName" nillable="true" type="xsd:string"/>
+     <element name="empSeniorityDate" nillable="true" type="xsd:dateTime"/>
+     <element name="empShftpatOffset" nillable="true" type="xsd:string"/>
+     <element name="empSin" nillable="true" type="xsd:string"/>
+     <element name="empStatus" nillable="true" type="xsd:string"/>
+     <element name="empTerminationDate" nillable="true" type="xsd:dateTime"/>
+     <element name="empVal1" nillable="true" type="xsd:string"/>
+     <element name="empVal10" nillable="true" type="xsd:string"/>
+     <element name="empVal11" nillable="true" type="xsd:string"/>
+     <element name="empVal12" nillable="true" type="xsd:string"/>
+     <element name="empVal13" nillable="true" type="xsd:string"/>
+     <element name="empVal14" nillable="true" type="xsd:string"/>
+     <element name="empVal15" nillable="true" type="xsd:string"/>
+     <element name="empVal16" nillable="true" type="xsd:string"/>
+     <element name="empVal17" nillable="true" type="xsd:string"/>
+     <element name="empVal18" nillable="true" type="xsd:string"/>
+     <element name="empVal19" nillable="true" type="xsd:string"/>
+     <element name="empVal2" nillable="true" type="xsd:string"/>
+     <element name="empVal20" nillable="true" type="xsd:string"/>
+     <element name="empVal3" nillable="true" type="xsd:string"/>
+     <element name="empVal4" nillable="true" type="xsd:string"/>
+     <element name="empVal5" nillable="true" type="xsd:string"/>
+     <element name="empVal6" nillable="true" type="xsd:string"/>
+     <element name="empVal7" nillable="true" type="xsd:string"/>
+     <element name="empVal8" nillable="true" type="xsd:string"/>
+     <element name="empVal9" nillable="true" type="xsd:string"/>
+     <element name="paygrpId" nillable="true" type="xsd:string"/>
+     <element name="shftpatId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSEmployee">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSEmployee[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSEmployeeOverride">
+    <sequence>
+     <element name="action" nillable="true" type="xsd:string"/>
+     <element name="employee" nillable="true" type="impl:WSEmployee"/>
+     <element name="override" nillable="true" type="impl:WSOverride"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSEmployeeOverride">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSEmployeeOverride[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSEmployeeScheduleBreak">
+    <sequence>
+     <element name="empskdBrksDefaultStartTime" nillable="true" type="xsd:dateTime"/>
+     <element name="empskdBrksDuration" nillable="true" type="xsd:string"/>
+     <element name="empskdBrksEndTime" nillable="true" type="xsd:dateTime"/>
+     <element name="empskdBrksHtypeName" nillable="true" type="xsd:string"/>
+     <element name="empskdBrksStartTime" nillable="true" type="xsd:dateTime"/>
+     <element name="empskdBrksTcodeName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSEmployeeScheduleBreak">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSEmployeeScheduleBreak[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSEmployeeSchedule">
+    <sequence>
+     <element name="empId" nillable="true" type="xsd:string"/>
+     <element name="empskdActBaseRate" nillable="true" type="xsd:string"/>
+     <element name="empskdActEndTime" nillable="true" type="xsd:dateTime"/>
+     <element name="empskdActEndTime2" nillable="true" type="xsd:dateTime"/>
+     <element name="empskdActEndTime3" nillable="true" type="xsd:dateTime"/>
+     <element name="empskdActEndTime4" nillable="true" type="xsd:dateTime"/>
+     <element name="empskdActEndTime5" nillable="true" type="xsd:dateTime"/>
+     <element name="empskdActMinutes" nillable="true" type="xsd:string"/>
+     <element name="empskdActShftpatId" nillable="true" type="xsd:string"/>
+     <element name="empskdActShiftId" nillable="true" type="xsd:string"/>
+     <element name="empskdActShiftId2" nillable="true" type="xsd:string"/>
+     <element name="empskdActShiftId3" nillable="true" type="xsd:string"/>
+     <element name="empskdActShiftId4" nillable="true" type="xsd:string"/>
+     <element name="empskdActShiftId5" nillable="true" type="xsd:string"/>
+     <element name="empskdActStartTime" nillable="true" type="xsd:dateTime"/>
+     <element name="empskdActStartTime2" nillable="true" type="xsd:dateTime"/>
+     <element name="empskdActStartTime3" nillable="true" type="xsd:dateTime"/>
+     <element name="empskdActStartTime4" nillable="true" type="xsd:dateTime"/>
+     <element name="empskdActStartTime5" nillable="true" type="xsd:dateTime"/>
+     <element name="empskdBreak" nillable="true" type="impl:ArrayOfWSEmployeeScheduleBreak"/>
+     <element name="empskdBreak2" nillable="true" type="impl:ArrayOfWSEmployeeScheduleBreak"/>
+     <element name="empskdBreak3" nillable="true" type="impl:ArrayOfWSEmployeeScheduleBreak"/>
+     <element name="empskdBreak4" nillable="true" type="impl:ArrayOfWSEmployeeScheduleBreak"/>
+     <element name="empskdBreak5" nillable="true" type="impl:ArrayOfWSEmployeeScheduleBreak"/>
+     <element name="empskdDefBaseRate" nillable="true" type="xsd:string"/>
+     <element name="empskdDefEndTime" nillable="true" type="xsd:dateTime"/>
+     <element name="empskdDefMinutes" nillable="true" type="xsd:string"/>
+     <element name="empskdDefShftpatId" nillable="true" type="xsd:string"/>
+     <element name="empskdDefShiftId" nillable="true" type="xsd:string"/>
+     <element name="empskdDefStartTime" nillable="true" type="xsd:dateTime"/>
+     <element name="empskdId" nillable="true" type="xsd:string"/>
+     <element name="empskdLtaId" nillable="true" type="xsd:string"/>
+     <element name="workDate" nillable="true" type="xsd:dateTime"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSEmployeeSchedule">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSEmployeeSchedule[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSEmployeeScheduleOverride">
+    <sequence>
+     <element name="action" nillable="true" type="xsd:string"/>
+     <element name="employeeSchedule" nillable="true" type="impl:WSEmployeeSchedule"/>
+     <element name="override" nillable="true" type="impl:WSOverride"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSEmployeeScheduleOverride">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSEmployeeScheduleOverride[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSEmployeeHolidayOverride">
+    <sequence>
+     <element name="action" nillable="true" type="xsd:string"/>
+     <element name="holiday" nillable="true" type="impl:WSHoliday"/>
+     <element name="override" nillable="true" type="impl:WSOverride"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSEmployeeHolidayOverride">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSEmployeeHolidayOverride[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSHourType">
+    <sequence>
+     <element name="htypeDesc" nillable="true" type="xsd:string"/>
+     <element name="htypeFlag1" nillable="true" type="xsd:string"/>
+     <element name="htypeFlag2" nillable="true" type="xsd:string"/>
+     <element name="htypeFlag3" nillable="true" type="xsd:string"/>
+     <element name="htypeFlag4" nillable="true" type="xsd:string"/>
+     <element name="htypeFlag5" nillable="true" type="xsd:string"/>
+     <element name="htypeId" nillable="true" type="xsd:string"/>
+     <element name="htypeMultiple" nillable="true" type="xsd:string"/>
+     <element name="htypeName" nillable="true" type="xsd:string"/>
+     <element name="htypeSortorder" nillable="true" type="xsd:string"/>
+     <element name="htypeSummarize" nillable="true" type="xsd:string"/>
+     <element name="htypeUdf1" nillable="true" type="xsd:string"/>
+     <element name="htypeUdf2" nillable="true" type="xsd:string"/>
+     <element name="htypeUdf3" nillable="true" type="xsd:string"/>
+     <element name="htypeUdf4" nillable="true" type="xsd:string"/>
+     <element name="htypeUdf5" nillable="true" type="xsd:string"/>
+     <element name="htypeUnauthorize" nillable="true" type="xsd:string"/>
+     <element name="htypeYag" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSHourType">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSHourType[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSJob">
+    <sequence>
+     <element name="jobDesc" nillable="true" type="xsd:string"/>
+     <element name="jobEndDate" nillable="true" type="xsd:dateTime"/>
+     <element name="jobFlag1" nillable="true" type="xsd:string"/>
+     <element name="jobFlag2" nillable="true" type="xsd:string"/>
+     <element name="jobFlag3" nillable="true" type="xsd:string"/>
+     <element name="jobFlag4" nillable="true" type="xsd:string"/>
+     <element name="jobFlag5" nillable="true" type="xsd:string"/>
+     <element name="jobId" nillable="true" type="xsd:string"/>
+     <element name="jobName" nillable="true" type="xsd:string"/>
+     <element name="jobRefkey1" nillable="true" type="xsd:string"/>
+     <element name="jobRefkey2" nillable="true" type="xsd:string"/>
+     <element name="jobRefkey3" nillable="true" type="xsd:string"/>
+     <element name="jobRefkey4" nillable="true" type="xsd:string"/>
+     <element name="jobRefkey5" nillable="true" type="xsd:string"/>
+     <element name="jobStartDate" nillable="true" type="xsd:dateTime"/>
+     <element name="jobVal1" nillable="true" type="xsd:string"/>
+     <element name="jobVal10" nillable="true" type="xsd:string"/>
+     <element name="jobVal2" nillable="true" type="xsd:string"/>
+     <element name="jobVal3" nillable="true" type="xsd:string"/>
+     <element name="jobVal4" nillable="true" type="xsd:string"/>
+     <element name="jobVal5" nillable="true" type="xsd:string"/>
+     <element name="jobVal6" nillable="true" type="xsd:string"/>
+     <element name="jobVal7" nillable="true" type="xsd:string"/>
+     <element name="jobVal8" nillable="true" type="xsd:string"/>
+     <element name="jobVal9" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSJob">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSJob[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSLTAOverride">
+    <complexContent>
+     <extension base="impl:WSWorkDetailOverride">
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOfWSLTAOverride">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSLTAOverride[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOfWSOverride">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSOverride[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSOverrideType">
+    <sequence>
+     <element name="ovrtypActive" nillable="true" type="xsd:string"/>
+     <element name="ovrtypDesc" nillable="true" type="xsd:string"/>
+     <element name="ovrtypEmployee" nillable="true" type="xsd:string"/>
+     <element name="ovrtypFlag1" nillable="true" type="xsd:string"/>
+     <element name="ovrtypFlag2" nillable="true" type="xsd:string"/>
+     <element name="ovrtypFlag3" nillable="true" type="xsd:string"/>
+     <element name="ovrtypFlag4" nillable="true" type="xsd:string"/>
+     <element name="ovrtypFlag5" nillable="true" type="xsd:string"/>
+     <element name="ovrtypId" nillable="true" type="xsd:string"/>
+     <element name="ovrtypLang1" nillable="true" type="xsd:string"/>
+     <element name="ovrtypLang2" nillable="true" type="xsd:string"/>
+     <element name="ovrtypLang3" nillable="true" type="xsd:string"/>
+     <element name="ovrtypLang4" nillable="true" type="xsd:string"/>
+     <element name="ovrtypLang5" nillable="true" type="xsd:string"/>
+     <element name="ovrtypLink" nillable="true" type="xsd:string"/>
+     <element name="ovrtypName" nillable="true" type="xsd:string"/>
+     <element name="ovrtypOrder" nillable="true" type="xsd:string"/>
+     <element name="ovrtypPrefix" nillable="true" type="xsd:string"/>
+     <element name="ovrtypSchedule" nillable="true" type="xsd:string"/>
+     <element name="ovrtypShow" nillable="true" type="xsd:string"/>
+     <element name="ovrtypTimesheet" nillable="true" type="xsd:string"/>
+     <element name="ovrtypUdf1" nillable="true" type="xsd:string"/>
+     <element name="ovrtypUdf2" nillable="true" type="xsd:string"/>
+     <element name="ovrtypUdf3" nillable="true" type="xsd:string"/>
+     <element name="ovrtypUdf4" nillable="true" type="xsd:string"/>
+     <element name="ovrtypUdf5" nillable="true" type="xsd:string"/>
+     <element name="ovrtypWktimesheet" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSOverrideType">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSOverrideType[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSPayGroup">
+    <sequence>
+     <element name="paygrpAdjustDate" nillable="true" type="xsd:dateTime"/>
+     <element name="paygrpDayStartTime" nillable="true" type="xsd:dateTime"/>
+     <element name="paygrpDesc" nillable="true" type="xsd:string"/>
+     <element name="paygrpEndDate" nillable="true" type="xsd:dateTime"/>
+     <element name="paygrpHandsOffDate" nillable="true" type="xsd:dateTime"/>
+     <element name="paygrpId" type="xsd:long"/>
+     <element name="paygrpName" nillable="true" type="xsd:string"/>
+     <element name="paygrpStartDate" nillable="true" type="xsd:dateTime"/>
+     <element name="paygrpSupervisorDate" nillable="true" type="xsd:dateTime"/>
+     <element name="paygrpYearFirstDate" nillable="true" type="xsd:dateTime"/>
+     <element name="paygrptypId" type="xsd:long"/>
+     <element name="paysysId" type="xsd:long"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSPayGroup">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSPayGroup[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSProject">
+    <sequence>
+     <element name="projDesc" nillable="true" type="xsd:string"/>
+     <element name="projEndDate" nillable="true" type="xsd:dateTime"/>
+     <element name="projFlag1" nillable="true" type="xsd:string"/>
+     <element name="projFlag2" nillable="true" type="xsd:string"/>
+     <element name="projFlag3" nillable="true" type="xsd:string"/>
+     <element name="projFlag4" nillable="true" type="xsd:string"/>
+     <element name="projFlag5" nillable="true" type="xsd:string"/>
+     <element name="projId" nillable="true" type="xsd:string"/>
+     <element name="projName" nillable="true" type="xsd:string"/>
+     <element name="projRefkey1" nillable="true" type="xsd:string"/>
+     <element name="projRefkey2" nillable="true" type="xsd:string"/>
+     <element name="projRefkey3" nillable="true" type="xsd:string"/>
+     <element name="projRefkey4" nillable="true" type="xsd:string"/>
+     <element name="projRefkey5" nillable="true" type="xsd:string"/>
+     <element name="projStartDate" nillable="true" type="xsd:dateTime"/>
+     <element name="projVal1" nillable="true" type="xsd:string"/>
+     <element name="projVal2" nillable="true" type="xsd:string"/>
+     <element name="projVal3" nillable="true" type="xsd:string"/>
+     <element name="projVal4" nillable="true" type="xsd:string"/>
+     <element name="projVal5" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSProject">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSProject[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSShift">
+    <sequence>
+     <element name="colrId" nillable="true" type="xsd:string"/>
+     <element name="shftDesc" nillable="true" type="xsd:string"/>
+     <element name="shftEndTime" nillable="true" type="xsd:dateTime"/>
+     <element name="shftFlag1" nillable="true" type="xsd:string"/>
+     <element name="shftFlag2" nillable="true" type="xsd:string"/>
+     <element name="shftFlag3" nillable="true" type="xsd:string"/>
+     <element name="shftFlag4" nillable="true" type="xsd:string"/>
+     <element name="shftFlag5" nillable="true" type="xsd:string"/>
+     <element name="shftId" nillable="true" type="xsd:string"/>
+     <element name="shftName" nillable="true" type="xsd:string"/>
+     <element name="shftStartTime" nillable="true" type="xsd:dateTime"/>
+     <element name="shftUdf1" nillable="true" type="xsd:string"/>
+     <element name="shftUdf2" nillable="true" type="xsd:string"/>
+     <element name="shftUdf3" nillable="true" type="xsd:string"/>
+     <element name="shftUdf4" nillable="true" type="xsd:string"/>
+     <element name="shftUdf5" nillable="true" type="xsd:string"/>
+     <element name="shftVal1" nillable="true" type="xsd:string"/>
+     <element name="shftVal2" nillable="true" type="xsd:string"/>
+     <element name="shftVal3" nillable="true" type="xsd:string"/>
+     <element name="shftVal4" nillable="true" type="xsd:string"/>
+     <element name="shftVal5" nillable="true" type="xsd:string"/>
+     <element name="shftYag" nillable="true" type="xsd:string"/>
+     <element name="shftgrpId" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSShift">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSShift[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSShiftPattern">
+    <sequence>
+     <element name="shftgrpId" nillable="true" type="xsd:string"/>
+     <element name="shftpatDayStartTime" nillable="true" type="xsd:dateTime"/>
+     <element name="shftpatDesc" nillable="true" type="xsd:string"/>
+     <element name="shftpatFlag1" nillable="true" type="xsd:string"/>
+     <element name="shftpatFlag2" nillable="true" type="xsd:string"/>
+     <element name="shftpatFlag3" nillable="true" type="xsd:string"/>
+     <element name="shftpatFlag4" nillable="true" type="xsd:string"/>
+     <element name="shftpatFlag5" nillable="true" type="xsd:string"/>
+     <element name="shftpatId" nillable="true" type="xsd:string"/>
+     <element name="shftpatName" nillable="true" type="xsd:string"/>
+     <element name="shftpatStartDate" nillable="true" type="xsd:dateTime"/>
+     <element name="shftpatUdf1" nillable="true" type="xsd:string"/>
+     <element name="shftpatUdf2" nillable="true" type="xsd:string"/>
+     <element name="shftpatUdf3" nillable="true" type="xsd:string"/>
+     <element name="shftpatUdf4" nillable="true" type="xsd:string"/>
+     <element name="shftpatUdf5" nillable="true" type="xsd:string"/>
+     <element name="shftpatVal1" nillable="true" type="xsd:string"/>
+     <element name="shftpatVal2" nillable="true" type="xsd:string"/>
+     <element name="shftpatVal3" nillable="true" type="xsd:string"/>
+     <element name="shftpatVal4" nillable="true" type="xsd:string"/>
+     <element name="shftpatVal5" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSShiftPattern">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSShiftPattern[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSTimeCode">
+    <sequence>
+     <element name="colrId" nillable="true" type="xsd:string"/>
+     <element name="htypeId" nillable="true" type="xsd:string"/>
+     <element name="tcodeAffectsBalances" nillable="true" type="xsd:string"/>
+     <element name="tcodeDefHours" nillable="true" type="xsd:string"/>
+     <element name="tcodeDefaultRate" nillable="true" type="xsd:string"/>
+     <element name="tcodeDesc" nillable="true" type="xsd:string"/>
+     <element name="tcodeDow" nillable="true" type="xsd:string"/>
+     <element name="tcodeFlag1" nillable="true" type="xsd:string"/>
+     <element name="tcodeFlag10" nillable="true" type="xsd:string"/>
+     <element name="tcodeFlag2" nillable="true" type="xsd:string"/>
+     <element name="tcodeFlag3" nillable="true" type="xsd:string"/>
+     <element name="tcodeFlag4" nillable="true" type="xsd:string"/>
+     <element name="tcodeFlag5" nillable="true" type="xsd:string"/>
+     <element name="tcodeFlag6" nillable="true" type="xsd:string"/>
+     <element name="tcodeFlag7" nillable="true" type="xsd:string"/>
+     <element name="tcodeFlag8" nillable="true" type="xsd:string"/>
+     <element name="tcodeFlag9" nillable="true" type="xsd:string"/>
+     <element name="tcodeId" nillable="true" type="xsd:string"/>
+     <element name="tcodeIrregular" nillable="true" type="xsd:string"/>
+     <element name="tcodeName" nillable="true" type="xsd:string"/>
+     <element name="tcodeOws" nillable="true" type="xsd:string"/>
+     <element name="tcodeSortorder" nillable="true" type="xsd:string"/>
+     <element name="tcodeSummarize" nillable="true" type="xsd:string"/>
+     <element name="tcodeUnauthorize" nillable="true" type="xsd:string"/>
+     <element name="tcodeYag" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSTimeCode">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSTimeCode[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOfWSWorkDetail">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSWorkDetail[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOfWSWorkDetailOverride">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSWorkDetailOverride[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSWorkPremiumOverride">
+    <complexContent>
+     <extension base="impl:WSWorkDetailOverride">
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOfWSWorkPremiumOverride">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSWorkPremiumOverride[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSClock">
+    <sequence>
+     <element name="changed" nillable="true" type="xsd:string"/>
+     <element name="clockData" nillable="true" type="xsd:string"/>
+     <element name="clockTime" nillable="true" type="xsd:dateTime"/>
+     <element name="manual" nillable="true" type="xsd:string"/>
+     <element name="type" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSClock">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSClock[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSWorkSummary">
+    <sequence>
+     <element name="authBy" nillable="true" type="xsd:string"/>
+     <element name="authDate" nillable="true" type="xsd:dateTime"/>
+     <element name="authorized" nillable="true" type="xsd:string"/>
+     <element name="calcgrpId" nillable="true" type="xsd:string"/>
+     <element name="clocks" nillable="true" type="impl:ArrayOfWSClock"/>
+     <element name="comments" nillable="true" type="xsd:string"/>
+     <element name="desc" nillable="true" type="xsd:string"/>
+     <element name="empId" nillable="true" type="xsd:string"/>
+     <element name="endTime" nillable="true" type="xsd:dateTime"/>
+     <element name="error" nillable="true" type="xsd:string"/>
+     <element name="errorStatus" nillable="true" type="xsd:string"/>
+     <element name="flag1" nillable="true" type="xsd:string"/>
+     <element name="flag2" nillable="true" type="xsd:string"/>
+     <element name="flag3" nillable="true" type="xsd:string"/>
+     <element name="flag4" nillable="true" type="xsd:string"/>
+     <element name="flag5" nillable="true" type="xsd:string"/>
+     <element name="flagBrk" nillable="true" type="xsd:string"/>
+     <element name="flagRecall" nillable="true" type="xsd:string"/>
+     <element name="fullDayCode" nillable="true" type="xsd:string"/>
+     <element name="fullDayMinutes" nillable="true" type="xsd:string"/>
+     <element name="htypeSum" nillable="true" type="xsd:string"/>
+     <element name="id" nillable="true" type="xsd:string"/>
+     <element name="inCode" nillable="true" type="xsd:string"/>
+     <element name="manualCalc" nillable="true" type="xsd:string"/>
+     <element name="messages" nillable="true" type="xsd:string"/>
+     <element name="origClocks" nillable="true" type="xsd:string"/>
+     <element name="outCode" nillable="true" type="xsd:string"/>
+     <element name="paygrpId" nillable="true" type="xsd:string"/>
+     <element name="retrieved" nillable="true" type="xsd:string"/>
+     <element name="rulesApplied" nillable="true" type="xsd:string"/>
+     <element name="shftId" nillable="true" type="xsd:string"/>
+     <element name="startTime" nillable="true" type="xsd:dateTime"/>
+     <element name="submitted" nillable="true" type="xsd:string"/>
+     <element name="tcodeSum" nillable="true" type="xsd:string"/>
+     <element name="udf1" nillable="true" type="xsd:string"/>
+     <element name="udf10" nillable="true" type="xsd:string"/>
+     <element name="udf2" nillable="true" type="xsd:string"/>
+     <element name="udf3" nillable="true" type="xsd:string"/>
+     <element name="udf4" nillable="true" type="xsd:string"/>
+     <element name="udf5" nillable="true" type="xsd:string"/>
+     <element name="udf6" nillable="true" type="xsd:string"/>
+     <element name="udf7" nillable="true" type="xsd:string"/>
+     <element name="udf8" nillable="true" type="xsd:string"/>
+     <element name="udf9" nillable="true" type="xsd:string"/>
+     <element name="useDefSettings" nillable="true" type="xsd:string"/>
+     <element name="workDate" nillable="true" type="xsd:dateTime"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSWorkSummary">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSWorkSummary[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSWorkSummaryOverride">
+    <sequence>
+     <element name="action" nillable="true" type="xsd:string"/>
+     <element name="override" nillable="true" type="impl:WSOverride"/>
+     <element name="workSummary" nillable="true" type="impl:WSWorkSummary"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSWorkSummaryOverride">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSWorkSummaryOverride[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSTimeAndAttendanceData">
+    <sequence>
+     <element name="alternateOverrideList" nillable="true" type="impl:ArrayOfWSAlternateHolidayOverride"/>
+     <element name="calcGroupList" nillable="true" type="impl:ArrayOfWSCalcGroup"/>
+     <element name="calculateRecs" type="xsd:boolean"/>
+     <element name="createDefaultRecord" type="xsd:boolean"/>
+     <element name="currentPage" type="xsd:int"/>
+     <element name="departmentList" nillable="true" type="impl:ArrayOfWSDepartment"/>
+     <element name="docketList" nillable="true" type="impl:ArrayOfWSDocket"/>
+     <element name="elapsedTimeOverrideList" nillable="true" type="impl:ArrayOfWSElapsedTimeOverride"/>
+     <element name="employeeBalanceOverrideList" nillable="true" type="impl:ArrayOfWSEmployeeBalanceOverride"/>
+     <element name="employeeDefaultLaborOverrideList" nillable="true" type="impl:ArrayOfWSEmployeeDefaultLaborOverride"/>
+     <element name="employeeList" nillable="true" type="impl:ArrayOfWSEmployee"/>
+     <element name="employeeOverrideList" nillable="true" type="impl:ArrayOfWSEmployeeOverride"/>
+     <element name="employeeScheduleList" nillable="true" type="impl:ArrayOfWSEmployeeSchedule"/>
+     <element name="employeeScheduleOverrideList" nillable="true" type="impl:ArrayOfWSEmployeeScheduleOverride"/>
+     <element name="holidayOverrideList" nillable="true" type="impl:ArrayOfWSEmployeeHolidayOverride"/>
+     <element name="hourTypeList" nillable="true" type="impl:ArrayOfWSHourType"/>
+     <element name="jobList" nillable="true" type="impl:ArrayOfWSJob"/>
+     <element name="ltaOverrideList" nillable="true" type="impl:ArrayOfWSLTAOverride"/>
+     <element name="overrideList" nillable="true" type="impl:ArrayOfWSOverride"/>
+     <element name="overrideTypeList" nillable="true" type="impl:ArrayOfWSOverrideType"/>
+     <element name="payGroupList" nillable="true" type="impl:ArrayOfWSPayGroup"/>
+     <element name="projectList" nillable="true" type="impl:ArrayOfWSProject"/>
+     <element name="queryId" nillable="true" type="xsd:string"/>
+     <element name="shiftList" nillable="true" type="impl:ArrayOfWSShift"/>
+     <element name="shiftPatternList" nillable="true" type="impl:ArrayOfWSShiftPattern"/>
+     <element name="timeCodeList" nillable="true" type="impl:ArrayOfWSTimeCode"/>
+     <element name="totalPages" type="xsd:int"/>
+     <element name="workDetailList" nillable="true" type="impl:ArrayOfWSWorkDetail"/>
+     <element name="workDetailOverrideList" nillable="true" type="impl:ArrayOfWSWorkDetailOverride"/>
+     <element name="workPremiumOverrideList" nillable="true" type="impl:ArrayOfWSWorkPremiumOverride"/>
+     <element name="workSummaryList" nillable="true" type="impl:ArrayOfWSWorkSummary"/>
+     <element name="workSummaryOverrideList" nillable="true" type="impl:ArrayOfWSWorkSummaryOverride"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_xsd_long">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:long[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSNameValue">
+    <sequence>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="value" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSNameValue">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSNameValue[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="WSClockPending">
+    <sequence>
+     <element name="ctpjContent" nillable="true" type="xsd:string"/>
+     <element name="ctpjDept" nillable="true" type="xsd:string"/>
+     <element name="ctpjDkt" nillable="true" type="xsd:string"/>
+     <element name="ctpjDktQty" nillable="true" type="xsd:string"/>
+     <element name="ctpjDktTime" nillable="true" type="xsd:string"/>
+     <element name="ctpjExtraData" nillable="true" type="impl:ArrayOfWSNameValue"/>
+     <element name="ctpjFinger" nillable="true" type="xsd:string"/>
+     <element name="ctpjId" nillable="true" type="xsd:string"/>
+     <element name="ctpjIdentType" nillable="true" type="xsd:string"/>
+     <element name="ctpjIdentifier" nillable="true" type="xsd:string"/>
+     <element name="ctpjJob" nillable="true" type="xsd:string"/>
+     <element name="ctpjPrj" nillable="true" type="xsd:string"/>
+     <element name="ctpjQuality" nillable="true" type="xsd:string"/>
+     <element name="ctpjRdrName" nillable="true" type="xsd:string"/>
+     <element name="ctpjTCode" nillable="true" type="xsd:string"/>
+     <element name="ctpjTemplate" nillable="true" type="xsd:string"/>
+     <element name="ctpjTime" nillable="true" type="xsd:string"/>
+     <element name="ctpjType" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfWSClockPending">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="impl:WSClockPending[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+  </schema>
+  <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://exception.webservices.workbrain.com">
+   <import namespace="http://ta.webservices.workbrain.com"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="WSApplicationException">
+    <sequence>
+     <element name="errorCode" nillable="true" type="xsd:string"/>
+     <element name="errorMessage" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="executeQueryResponse">
+
+      <wsdl:part name="executeQueryReturn" type="impl:WSTimeAndAttendanceData"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="cancelOverrideRequest">
+
+      <wsdl:part name="ids" type="impl:ArrayOf_xsd_long"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPageQueryDataResponse">
+
+      <wsdl:part name="getPageQueryDataReturn" type="impl:WSTimeAndAttendanceData"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="executeQueryRequest">
+
+      <wsdl:part name="criteria" type="impl:WSQueryCriteria"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="cancelOverrideResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="executeOverrideRequest">
+
+      <wsdl:part name="overrides" type="impl:WSTimeAndAttendanceData"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPageQueryDataRequest">
+
+      <wsdl:part name="queryId" type="xsd:string"/>
+
+      <wsdl:part name="pageNo" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLatestClockWithFilterRequest">
+
+      <wsdl:part name="empId" type="xsd:string"/>
+
+      <wsdl:part name="date" type="xsd:dateTime"/>
+
+      <wsdl:part name="lookBackHours" type="xsd:int"/>
+
+      <wsdl:part name="includeUnProcessedClks" type="xsd:boolean"/>
+
+      <wsdl:part name="acceptClks" type="impl:ArrayOfWSClock"/>
+
+      <wsdl:part name="rejectClks" type="impl:ArrayOfWSClock"/>
+
+      <wsdl:part name="mustMeetAllAccept" type="xsd:boolean"/>
+
+      <wsdl:part name="mustMeetAllReject" type="xsd:boolean"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLatestClockRequest">
+
+      <wsdl:part name="empId" type="xsd:string"/>
+
+      <wsdl:part name="date" type="xsd:dateTime"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="executeOverrideResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="getLatestClockWithFilterResponse">
+
+      <wsdl:part name="getLatestClockWithFilterReturn" type="impl:WSClock"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="doClockResponse">
+
+   </wsdl:message>
+
+   <wsdl:message name="WSApplicationException">
+
+      <wsdl:part name="fault" type="tns1:WSApplicationException"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="doClockRequest">
+
+      <wsdl:part name="clocks" type="impl:ArrayOfWSClockPending"/>
+
+      <wsdl:part name="batchSize" type="xsd:int"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getLatestClockResponse">
+
+      <wsdl:part name="getLatestClockReturn" type="impl:WSClock"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WorkbrainTimeAndAttendance">
+
+      <wsdl:operation name="executeQuery" parameterOrder="criteria">
+
+         <wsdl:input message="impl:executeQueryRequest" name="executeQueryRequest"/>
+
+         <wsdl:output message="impl:executeQueryResponse" name="executeQueryResponse"/>
+
+         <wsdl:fault message="impl:WSApplicationException" name="WSApplicationException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cancelOverride" parameterOrder="ids">
+
+         <wsdl:input message="impl:cancelOverrideRequest" name="cancelOverrideRequest"/>
+
+         <wsdl:output message="impl:cancelOverrideResponse" name="cancelOverrideResponse"/>
+
+         <wsdl:fault message="impl:WSApplicationException" name="WSApplicationException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="executeOverride" parameterOrder="overrides">
+
+         <wsdl:input message="impl:executeOverrideRequest" name="executeOverrideRequest"/>
+
+         <wsdl:output message="impl:executeOverrideResponse" name="executeOverrideResponse"/>
+
+         <wsdl:fault message="impl:WSApplicationException" name="WSApplicationException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPageQueryData" parameterOrder="queryId pageNo">
+
+         <wsdl:input message="impl:getPageQueryDataRequest" name="getPageQueryDataRequest"/>
+
+         <wsdl:output message="impl:getPageQueryDataResponse" name="getPageQueryDataResponse"/>
+
+         <wsdl:fault message="impl:WSApplicationException" name="WSApplicationException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="doClock" parameterOrder="clocks batchSize">
+
+         <wsdl:input message="impl:doClockRequest" name="doClockRequest"/>
+
+         <wsdl:output message="impl:doClockResponse" name="doClockResponse"/>
+
+         <wsdl:fault message="impl:WSApplicationException" name="WSApplicationException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLatestClock" parameterOrder="empId date">
+
+         <wsdl:input message="impl:getLatestClockRequest" name="getLatestClockRequest"/>
+
+         <wsdl:output message="impl:getLatestClockResponse" name="getLatestClockResponse"/>
+
+         <wsdl:fault message="impl:WSApplicationException" name="WSApplicationException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLatestClockWithFilter" parameterOrder="empId date lookBackHours includeUnProcessedClks acceptClks rejectClks mustMeetAllAccept mustMeetAllReject">
+
+         <wsdl:input message="impl:getLatestClockWithFilterRequest" name="getLatestClockWithFilterRequest"/>
+
+         <wsdl:output message="impl:getLatestClockWithFilterResponse" name="getLatestClockWithFilterResponse"/>
+
+         <wsdl:fault message="impl:WSApplicationException" name="WSApplicationException"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WorkbrainTimeAndAttendanceSoapBinding" type="impl:WorkbrainTimeAndAttendance">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="executeQuery">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="executeQueryRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="executeQueryResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="WSApplicationException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="WSApplicationException" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cancelOverride">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="cancelOverrideRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="cancelOverrideResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="WSApplicationException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="WSApplicationException" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="executeOverride">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="executeOverrideRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="executeOverrideResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="WSApplicationException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="WSApplicationException" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPageQueryData">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPageQueryDataRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPageQueryDataResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="WSApplicationException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="WSApplicationException" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="doClock">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="doClockRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="doClockResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="WSApplicationException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="WSApplicationException" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLatestClock">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getLatestClockRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getLatestClockResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="WSApplicationException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="WSApplicationException" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getLatestClockWithFilter">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getLatestClockWithFilterRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getLatestClockWithFilterResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="WSApplicationException">
+
+            <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="WSApplicationException" namespace="http://ta.webservices.workbrain.com" use="encoded"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WorkbrainTimeAndAttendance">
+
+      <wsdl:port binding="impl:WorkbrainTimeAndAttendanceSoapBinding" name="WorkbrainTimeAndAttendance">
+
+         <wsdlsoap:address location="http://localhost:8080/CodeConcepts/services/WorkbrainTimeAndAttendance"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
