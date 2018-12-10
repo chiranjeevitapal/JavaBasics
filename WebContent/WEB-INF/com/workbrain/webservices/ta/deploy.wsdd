@@ -1,0 +1,553 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from WorkbrainTimeAndAttendance WSDL service -->
+
+  <service name="WorkbrainTimeAndAttendance" provider="java:RPC" style="rpc" use="encoded">
+      <parameter name="wsdlTargetNamespace" value="http://ta.webservices.workbrain.com"/>
+      <parameter name="wsdlServiceElement" value="WorkbrainTimeAndAttendance"/>
+      <parameter name="schemaUnqualified" value="http://exception.webservices.workbrain.com,http://ta.webservices.workbrain.com"/>
+      <parameter name="wsdlServicePort" value="WorkbrainTimeAndAttendance"/>
+      <parameter name="className" value="com.workbrain.webservices.ta.WorkbrainTimeAndAttendanceSoapBindingSkeleton"/>
+      <parameter name="wsdlPortType" value="WorkbrainTimeAndAttendance"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSEmployeeBalanceOverride"
+        type="java:com.workbrain.webservices.ta.WSEmployeeBalanceOverride[]"
+        innerType="cmp-ns:WSEmployeeBalanceOverride" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSNameValue"
+        type="java:com.workbrain.webservices.ta.WSNameValue"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSTimeAndAttendanceData"
+        type="java:com.workbrain.webservices.ta.WSTimeAndAttendanceData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSQueryCriteria"
+        type="java:com.workbrain.webservices.ta.WSQueryCriteria"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSClock"
+        type="java:com.workbrain.webservices.ta.WSClock"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSElapsedTimeOverride"
+        type="java:com.workbrain.webservices.ta.WSElapsedTimeOverride[]"
+        innerType="cmp-ns:WSElapsedTimeOverride" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSDepartment"
+        type="java:com.workbrain.webservices.ta.WSDepartment[]"
+        innerType="cmp-ns:WSDepartment" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSCalcGroup"
+        type="java:com.workbrain.webservices.ta.WSCalcGroup"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSJob"
+        type="java:com.workbrain.webservices.ta.WSJob[]"
+        innerType="cmp-ns:WSJob" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSOverride"
+        type="java:com.workbrain.webservices.ta.WSOverride"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSHourType"
+        type="java:com.workbrain.webservices.ta.WSHourType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSWorkDetail"
+        type="java:com.workbrain.webservices.ta.WSWorkDetail[]"
+        innerType="cmp-ns:WSWorkDetail" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOf_xsd_long"
+        type="java:long[]"
+        innerType="cmp-ns:long" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSEmployeeBalance"
+        type="java:com.workbrain.webservices.ta.WSEmployeeBalance"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSHoliday"
+        type="java:com.workbrain.webservices.ta.WSHoliday"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSEmployee"
+        type="java:com.workbrain.webservices.ta.WSEmployee[]"
+        innerType="cmp-ns:WSEmployee" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSWorkDetail"
+        type="java:com.workbrain.webservices.ta.WSWorkDetail"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSEmployeeDefaultLabor"
+        type="java:com.workbrain.webservices.ta.WSEmployeeDefaultLabor"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSOverrideType"
+        type="java:com.workbrain.webservices.ta.WSOverrideType[]"
+        innerType="cmp-ns:WSOverrideType" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSTimeCode"
+        type="java:com.workbrain.webservices.ta.WSTimeCode"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSEmployeeHolidayOverride"
+        type="java:com.workbrain.webservices.ta.WSEmployeeHolidayOverride"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSOverride"
+        type="java:com.workbrain.webservices.ta.WSOverride[]"
+        innerType="cmp-ns:WSOverride" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSShiftPattern"
+        type="java:com.workbrain.webservices.ta.WSShiftPattern"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSWorkDetailOverride"
+        type="java:com.workbrain.webservices.ta.WSWorkDetailOverride"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSElapsedTimeOverride"
+        type="java:com.workbrain.webservices.ta.WSElapsedTimeOverride"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSWorkSummary"
+        type="java:com.workbrain.webservices.ta.WSWorkSummary[]"
+        innerType="cmp-ns:WSWorkSummary" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSCalcGroup"
+        type="java:com.workbrain.webservices.ta.WSCalcGroup[]"
+        innerType="cmp-ns:WSCalcGroup" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSDocket"
+        type="java:com.workbrain.webservices.ta.WSDocket"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOf_xsd_string"
+        type="java:java.lang.String[]"
+        innerType="cmp-ns:string" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSEmployeeSchedule"
+        type="java:com.workbrain.webservices.ta.WSEmployeeSchedule"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSWorkPremiumOverride"
+        type="java:com.workbrain.webservices.ta.WSWorkPremiumOverride[]"
+        innerType="cmp-ns:WSWorkPremiumOverride" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSClockPending"
+        type="java:com.workbrain.webservices.ta.WSClockPending"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSEmployeeScheduleOverride"
+        type="java:com.workbrain.webservices.ta.WSEmployeeScheduleOverride"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSPayGroup"
+        type="java:com.workbrain.webservices.ta.WSPayGroup"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSWorkDetailOverride"
+        type="java:com.workbrain.webservices.ta.WSWorkDetailOverride[]"
+        innerType="cmp-ns:WSWorkDetailOverride" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSNameValue"
+        type="java:com.workbrain.webservices.ta.WSNameValue[]"
+        innerType="cmp-ns:WSNameValue" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSAlternateHolidayOverride"
+        type="java:com.workbrain.webservices.ta.WSAlternateHolidayOverride[]"
+        innerType="cmp-ns:WSAlternateHolidayOverride" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSEmployeeDefaultLaborOverride"
+        type="java:com.workbrain.webservices.ta.WSEmployeeDefaultLaborOverride[]"
+        innerType="cmp-ns:WSEmployeeDefaultLaborOverride" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSProject"
+        type="java:com.workbrain.webservices.ta.WSProject"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSEmployeeOverride"
+        type="java:com.workbrain.webservices.ta.WSEmployeeOverride[]"
+        innerType="cmp-ns:WSEmployeeOverride" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSTimeCode"
+        type="java:com.workbrain.webservices.ta.WSTimeCode[]"
+        innerType="cmp-ns:WSTimeCode" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSClock"
+        type="java:com.workbrain.webservices.ta.WSClock[]"
+        innerType="cmp-ns:WSClock" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSWorkSummary"
+        type="java:com.workbrain.webservices.ta.WSWorkSummary"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSLTAOverride"
+        type="java:com.workbrain.webservices.ta.WSLTAOverride[]"
+        innerType="cmp-ns:WSLTAOverride" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSClockPending"
+        type="java:com.workbrain.webservices.ta.WSClockPending[]"
+        innerType="cmp-ns:WSClockPending" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSShift"
+        type="java:com.workbrain.webservices.ta.WSShift[]"
+        innerType="cmp-ns:WSShift" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSEmployeeHolidayOverride"
+        type="java:com.workbrain.webservices.ta.WSEmployeeHolidayOverride[]"
+        innerType="cmp-ns:WSEmployeeHolidayOverride" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSWorkSummaryOverride"
+        type="java:com.workbrain.webservices.ta.WSWorkSummaryOverride"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSEmployee"
+        type="java:com.workbrain.webservices.ta.WSEmployee"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSWorkSummaryOverride"
+        type="java:com.workbrain.webservices.ta.WSWorkSummaryOverride[]"
+        innerType="cmp-ns:WSWorkSummaryOverride" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSAlternateHolidayOverride"
+        type="java:com.workbrain.webservices.ta.WSAlternateHolidayOverride"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSEmployeeDefaultLaborOverride"
+        type="java:com.workbrain.webservices.ta.WSEmployeeDefaultLaborOverride"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSJob"
+        type="java:com.workbrain.webservices.ta.WSJob"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSEmployeeSchedule"
+        type="java:com.workbrain.webservices.ta.WSEmployeeSchedule[]"
+        innerType="cmp-ns:WSEmployeeSchedule" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSHourType"
+        type="java:com.workbrain.webservices.ta.WSHourType[]"
+        innerType="cmp-ns:WSHourType" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSEmployeeScheduleBreak"
+        type="java:com.workbrain.webservices.ta.WSEmployeeScheduleBreak"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSEmployeeScheduleBreak"
+        type="java:com.workbrain.webservices.ta.WSEmployeeScheduleBreak[]"
+        innerType="cmp-ns:WSEmployeeScheduleBreak" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSOverrideType"
+        type="java:com.workbrain.webservices.ta.WSOverrideType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSShiftPattern"
+        type="java:com.workbrain.webservices.ta.WSShiftPattern[]"
+        innerType="cmp-ns:WSShiftPattern" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSShift"
+        type="java:com.workbrain.webservices.ta.WSShift"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSDocket"
+        type="java:com.workbrain.webservices.ta.WSDocket[]"
+        innerType="cmp-ns:WSDocket" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSLTAOverride"
+        type="java:com.workbrain.webservices.ta.WSLTAOverride"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSEmployeeBalanceOverride"
+        type="java:com.workbrain.webservices.ta.WSEmployeeBalanceOverride"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSWorkPremiumOverride"
+        type="java:com.workbrain.webservices.ta.WSWorkPremiumOverride"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSEmployeeScheduleOverride"
+        type="java:com.workbrain.webservices.ta.WSEmployeeScheduleOverride[]"
+        innerType="cmp-ns:WSEmployeeScheduleOverride" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSProject"
+        type="java:com.workbrain.webservices.ta.WSProject[]"
+        innerType="cmp-ns:WSProject" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://exception.webservices.workbrain.com"
+        qname="ns:WSApplicationException"
+        type="java:com.workbrain.webservices.exception.WSApplicationException"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <arrayMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:ArrayOfWSPayGroup"
+        type="java:com.workbrain.webservices.ta.WSPayGroup[]"
+        innerType="cmp-ns:WSPayGroup" xmlns:cmp-ns="http://ta.webservices.workbrain.com"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSDepartment"
+        type="java:com.workbrain.webservices.ta.WSDepartment"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+      <typeMapping
+        xmlns:ns="http://ta.webservices.workbrain.com"
+        qname="ns:WSEmployeeOverride"
+        type="java:com.workbrain.webservices.ta.WSEmployeeOverride"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+      />
+  </service>
+</deployment>
