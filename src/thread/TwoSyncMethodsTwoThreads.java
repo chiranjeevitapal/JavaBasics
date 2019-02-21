@@ -27,7 +27,7 @@ class SyncThread extends Thread {
 		}
 	}
 	public synchronized void syncTwo() {
-		System.out.println(Thread.currentThread().getName()+" is accessing this..");
+		System.out.println(Thread.currentThread().getName()+" is accessing this....");
 	}
 
 	public void run() {

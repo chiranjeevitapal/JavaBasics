@@ -23,7 +23,7 @@ class YieldThread extends Thread {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			yield();
+			//yield();
 			System.out.println(param);
 		}
 		
