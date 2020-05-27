@@ -1,0 +1,14 @@
+{
+  "impressionCaps": [
+    {
+      "placementName": "default_reward_table",
+      "spender": 3,
+      "nonSpender": 1
+    },
+    {
+      "placementName": "default_reward_table2",
+      "spender": 5,
+      "nonSpender": 4
+    }
+  ]
+}
