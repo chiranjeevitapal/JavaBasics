@@ -2,13 +2,13 @@
   "impressionCaps": [
     {
       "placementName": "default_reward_table",
-      "spender": 3,
-      "nonSpender": 1
+      "spender": 4,
+      "nonSpender": 4
     },
     {
       "placementName": "default_reward_table2",
-      "spender": 5,
-      "nonSpender": 4
+      "spender": 3,
+      "nonSpender": 3
     }
   ]
 }
